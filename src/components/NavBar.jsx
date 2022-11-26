@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom'
 import { MdMenu, MdClose } from 'react-icons/md'
@@ -48,37 +48,118 @@ ul{
     display: none;
     outline: none;
 }
+.closeNavIcon{
+    display: none;
+}
 @media only screen and (max-width: 768px){
+    padding:0;
+    .hidden-items{
+        transform: translateY(calc(-100% - var(--top)));
+    }
     .mobile-menu-icon{
         display: block;
     }
+    ${'' /* nav items for the phone menu */}
+    .navItems{
+        padding: 2rem;
+        width: 90%;
+        max-width:300px;
+        border-radius: 12px;
+        position: absolute;
+        right: 1rem;
+        top: var(--top);
+        transition: 0.3s ease transform;
+        background-color: var(--deep-dark);
+    .closeNavIcon{
+        display: block;
+        width: 3rem;
+        margin: 0 0 0 auto;
+        cursor: pointer;
+        *{
+            pointer-events: none;
+        }
+    }
+    li{
+        display: block;
+        margin-botom: 1rem; 
+    }
+    }
+    
 }
-`
+`;
 
 
 
 export default function NavBar() {
+    const [showNav, SetShowNav] = useState(false);
+
     return (
         <NavBarStyle>
-            <div className="mobile-menu-icon">
+            {/* this div contains code to close the nav bar when in mobile mode, in two sets of div */}
+            <div
+                className="mobile-menu-icon"
+                onClick={() => SetShowNav(!showNav)}
+                role="button"
+                onKeyDown={() => SetShowNav(!showNav)}
+                tabIndex={0}
+            >
                 <MdMenu />
             </div>
-            <ul>
-            <div className="closeNavIcon">
-                <MdClose />
-            </div>
+            <ul className={!showNav ? 'navItems hidden-items' : 'navItems'} >
+                <div
+                    className="closeNavIcon"
+                    onClick={() => SetShowNav(!showNav)}
+                    role="button"
+                    onKeyDown={() => SetShowNav(!showNav)}
+                    tabIndex={0}
+                >
+                    <MdClose />
+                </div>
                 <li>
-                    <NavLink to="/" >Home</NavLink>
+                    <NavLink
+                        to="/"
+                        exact
+                        onClick={() => SetShowNav(!showNav)}
+                        role="button"
+                        onKeyDown={() => SetShowNav(!showNav)}
+                        tabIndex={0}
+                    >
+                        Home
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/about">About</NavLink>
+                    <NavLink
+                        to="/about"
+                        onClick={() => SetShowNav(!showNav)}
+                        role="button"
+                        onKeyDown={() => SetShowNav(!showNav)}
+                        tabIndex={0}
+                    >
+                        About
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/projects">Projects</NavLink>
+                    <NavLink
+                        to="/projects"
+                        onClick={() => SetShowNav(!showNav)}
+                        role="button"
+                        onKeyDown={() => SetShowNav(!showNav)}
+                        tabIndex={0}
+                    >
+                        Projects
+                    </NavLink>
 
                 </li>
                 <li>
-                    <NavLink to="/contact">Contact</NavLink>
+                    <NavLink
+                        to="/contact"
+                        onClick={() => SetShowNav(!showNav)}
+                        role="button"
+                        onKeyDown={() => SetShowNav(!showNav)}
+                        tabIndex={0}
+                    >
+                        Contact
+                    </NavLink>
                 </li>
             </ul>
         </NavBarStyle>
