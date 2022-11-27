@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import SectionTitle from '../components/SectionTitle'
+import SectionTitle from './SectionTitle'
 import PText from './PText'
-import Btn from '../components/Btn'
+import Btn from './Btn'
 import AboutImg from "../assets/images/about-sec-img.png"
 
 const AboutSecStyled = styled.div`
@@ -70,7 +70,7 @@ const AboutSecStyled = styled.div`
             
         }
 
-    }
+    
 
 `;
 

@@ -47,10 +47,13 @@ ul{
     cursor: pointer;
     display: none;
     outline: none;
-}
-.closeNavIcon{
+    * {
+      pointer-events: none;
+    }
+  }
+  .navItems .closeNavIcon {
     display: none;
-}
+  }
 @media only screen and (max-width: 768px){
     padding:0;
     .hidden-items{
@@ -75,8 +78,8 @@ ul{
         width: 3rem;
         margin: 0 0 0 auto;
         cursor: pointer;
-        *{
-            pointer-events: none;
+        * {
+          ${'' /* pointer-events: none; */}
         }
     }
     li{
@@ -98,9 +101,9 @@ export default function NavBar() {
             {/* this div contains code to close the nav bar when in mobile mode, in two sets of div */}
             <div
                 className="mobile-menu-icon"
-                onClick={() => SetShowNav(!showNav)}
+                onClick={() => setShowNav(!showNav)}
                 role="button"
-                onKeyDown={() => SetShowNav(!showNav)}
+                onKeyDown={() => setShowNav(!showNav)}
                 tabIndex={0}
             >
                 <MdMenu />
@@ -108,9 +111,9 @@ export default function NavBar() {
             <ul className={!showNav ? 'navItems hidden-items' : 'navItems'} >
                 <div
                     className="closeNavIcon"
-                    onClick={() => SetShowNav(!showNav)}
+                    onClick={() => setShowNav(!showNav)}
                     role="button"
-                    onKeyDown={() => SetShowNav(!showNav)}
+                    onKeyDown={() => setShowNav(!showNav)}
                     tabIndex={0}
                 >
                     <MdClose />
@@ -119,9 +122,9 @@ export default function NavBar() {
                     <NavLink
                         to="/"
                         // exact
-                        onClick={() => SetShowNav(!showNav)}
+                        onClick={() => setShowNav(!showNav)}
                         role="button"
-                        onKeyDown={() => SetShowNav(!showNav)}
+                        onKeyDown={() => setShowNav(!showNav)}
                         tabIndex={0}
                     >
                         Home
@@ -130,9 +133,9 @@ export default function NavBar() {
                 <li>
                     <NavLink
                         to="/about"
-                        onClick={() => SetShowNav(!showNav)}
+                        onClick={() => setShowNav(!showNav)}
                         role="button"
-                        onKeyDown={() => SetShowNav(!showNav)}
+                        onKeyDown={() => setShowNav(!showNav)}
                         tabIndex={0}
                     >
                         About
