@@ -4,7 +4,7 @@ import HeroImg from '../assets/images/hero.png'
 import PText from "../components/PText"
 import Btn from "../components/Btn"
 import SocialMediaArrow from "../assets/images/social-media-arrow.svg"
-import ScrollDownArrow from "../assets/images/social-media-arrow.svg"
+import ScrollDownArrow from "../assets/images/scroll-down-arrow.svg"
 import { SocialIcon } from "react-social-icons"
 import Icon from "../components/Icons"
 import Icons from '../components/Icons'
@@ -116,7 +116,7 @@ const HeroStyle = styled.div`
       margin-top:3rem;
     }
     .hero-socials{
-      left: 0px;
+      left: 10px;
       bottom: -15%;
       width: 20px;
       .hero-social-indicator{
@@ -140,7 +140,7 @@ const HeroStyle = styled.div`
       }
     }
     .hero-scrollDown{
-        right: 0;
+        right: 10px;
         width: 20px;
         gap: 1rem;
         p {
@@ -189,7 +189,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="hero-scrollDown">
-            <p>Scrollbar</p>
+            <p>Scroll</p>
             <img src={ScrollDownArrow} alt="" />
           </div>
         </div>

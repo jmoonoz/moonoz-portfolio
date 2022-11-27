@@ -22,7 +22,7 @@ const BtnStyle = styled.div`
     }
     @media only screen(max-width: 768px){
         .btn{
-            font-size:1.8rem;
+            font-size:1rem;
         }
     }
 `;
@@ -32,7 +32,7 @@ export default function Btn({
     btnLink = 'test',
     outline = false }) {
     return (
-        <BtnStyle outline={outline}>
+        <BtnStyle outline={outline} className="btn-wrapper">
             <Link className="btn" to={btnLink}>
                 {btnText}
             </Link>
