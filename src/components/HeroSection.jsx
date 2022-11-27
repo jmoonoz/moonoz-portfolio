@@ -5,6 +5,9 @@ import PText from "../components/PText"
 import Btn from "../components/Btn"
 import SocialMediaArrow from "../assets/images/social-media-arrow.svg"
 import ScrollDownArrow from "../assets/images/social-media-arrow.svg"
+import { SocialIcon } from "react-social-icons"
+import Icon from "../components/Icons"
+import Icons from '../components/Icons'
 
 
 const HeroStyle = styled.div`
@@ -136,15 +139,20 @@ const HeroStyle = styled.div`
         }
       }
     }
-      .hero-scrollDown{
+    .hero-scrollDown{
         right: 0;
         width: 20px;
         gap: 1rem;
         p {
           font-size: 1.3rem;
         }
-      }
+    }
+     a.social-icon{
+        width: 30px !important;
+        height:30px !important;
+    }
   }
+ 
 
 `;
 
@@ -174,21 +182,9 @@ export default function HeroSection() {
             </div>
             <div className="hero-social-text">
               <ul>
-                <li>
-                  <a href="https://www.instagram.com/moonozdisenoz/" target="_blank" rel="noreffer">
-                    InstagramG
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/jmoonoz" target="_blank" rel="noreffer">
-                    Git
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/moonoz/" target="_blank" rel="noreffer">
-                    LinkedIn
-                  </a>
-                </li>
+                  <Icons urlLink="https://www.instagram.com/moonozdisenoz/" />
+                  <Icons urlLink="https://github.com/jmoonoz" />
+                  <Icons urlLink="https://www.linkedin.com/in/moonoz/" />
               </ul>
             </div>
           </div>
