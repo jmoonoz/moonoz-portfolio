@@ -3,7 +3,7 @@ import ExpereincesSecItem from './ExpereincesSecItem'
 import SectionTitle from './SectionTitle'
 import styled from 'styled-components'
 import { MdDesignServices, MdDesktopMac, MdOutlineDesignServices } from 'react-icons/md'
-import {BiCode} from 'react-icons/Bi'
+import {BiCode} from 'react-icons/bi'
 
 const ExpereincesItemStyle = styled.div`
     padding: 10rem 0;
