@@ -15,7 +15,7 @@ export default function Home() {
             <ExperiencesSec/>
             <ProjectSection />
             <ContactBanner />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

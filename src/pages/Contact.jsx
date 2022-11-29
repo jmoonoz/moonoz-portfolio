@@ -1,9 +1,15 @@
 import React from 'react'
+import styled from "styled-components"
+
+const ContactStyled = styled.div`
+
+`;
 
 export default function Contact() {
     return (
-        <h1>
+        <ContactStyled>
             
-        </h1>
+            
+        </ContactStyled>
     )
 }

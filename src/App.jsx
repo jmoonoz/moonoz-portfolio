@@ -11,6 +11,7 @@ import Contact from './pages/Contact'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import './App.css'
+import Footer from './components/Footer'
 
 export default function App() {
   return (
@@ -20,10 +21,10 @@ export default function App() {
         <Routes>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/projects" element={<Projects />}></Route> 
+          <Route path="/projects" element={<Projects />}></Route>
           <Route path="/" element={<Home />}></Route>
         </Routes>
-
+        <Footer />
       </Router>
     </>
   );

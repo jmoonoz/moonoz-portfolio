@@ -3,6 +3,8 @@ import PText from '../components/PText'
 import FooterCol from "./FooterCol"
 import styled from 'styled-components'
 
+const date = new Date();
+
 const FooterStyle = styled.div`
     padding-top: 10rem;
     background-color: var(--deep-dark);
@@ -137,11 +139,10 @@ export default function Footer() {
                     />
                 </div>
             </div>
-            <div className="copyRight">
+            <div className="copyright">
                 <div className="container">
                     <PText>
-                    copyright
-
+                        ©{date.getFullYear()} - Joel Muñoz | Front End developer | Graphic Designer | Dreamer
                     </PText>
                 </div>
             </div>
